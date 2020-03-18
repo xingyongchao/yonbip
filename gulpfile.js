@@ -6,6 +6,7 @@ var chalk = require('chalk')
 var gulp = require("gulp");
 var minify = require("gulp-minify-css");
 var uglify = require('gulp-uglify');
+var gulp = require('gulp-util');
 
 
 gulp.task("clean", function (cb) {
@@ -39,6 +40,9 @@ gulp.task("js", function () {
         ])
         .pipe(uglify())
         .pipe(gulp.dest('build'))
+        .on('error', function(err) {
+            gutil.log(gutil.colors.red('[Error]'), err.toString());
+        })
 });
 
 
