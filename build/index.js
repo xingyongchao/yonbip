@@ -1,0 +1,1 @@
+"use strict";function HelloMessage(e){return React.createElement("div",{className:"aaa"},React.createElement("h1",null,"Hello World!"))}var element=React.createElement(HelloMessage,null);ReactDOM.render(element,document.getElementById("app"));

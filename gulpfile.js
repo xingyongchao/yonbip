@@ -4,10 +4,15 @@ var rm = require('rimraf')
 var chalk = require('chalk')
 // gulp & gulp plugin
 var gulp = require("gulp");
+var babel = require("gulp-babel");
 var minify = require("gulp-minify-css");
 var uglify = require('gulp-uglify');
-var gulp = require('gulp-util');
+// var gulp = require('gulp-util');
 
+var babelPresets = [
+    "react",
+    "env",
+]
 
 gulp.task("clean", function (cb) {
     // spinner.start()
@@ -38,11 +43,13 @@ gulp.task("js", function () {
         .src([
             './src/*.js',
         ])
+        .pipe(
+            babel({
+              presets: babelPresets,
+            })
+          )
         .pipe(uglify())
         .pipe(gulp.dest('build'))
-        .on('error', function(err) {
-            gutil.log(gutil.colors.red('[Error]'), err.toString());
-        })
 });
 
 
