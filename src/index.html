@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8" />
     <title>yonbip</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="app"></div>
     <script src="http://design.yonyoucloud.com/static/react/16.4.0/umd/react.production.min.js"></script>
     <script src="http://design.yonyoucloud.com/static/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
-    <script src="./static/js/babel.min.js"></script>
-</head>
-
-<body>
-
-    <div id="app"></div>
-    <!-- <script src="./index.js"></script> -->
+    <script src="./static/babel.min.js"></script>
+    <script>
+        function getHost() {
+            return "https://u8c-sso-daily.yyuap.com"
+        }
+        function getCurrentLangCode() {
+            return 'zh_CN';
+            // return 'en_US';
+        }
+    </script>
     <script type="text/babel" src="./index.js"></script>
-
 </body>
-
 </html>
